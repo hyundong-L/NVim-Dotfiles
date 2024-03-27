@@ -39,7 +39,7 @@ require("lspconfig")['jdtls'].setup({
         runtimes = {
           {
             name = "JavaSE-17",
-            path = "/Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home",
+            path = "/Library/Java/JavaVirtualMachines/jdk-17.0.9+9/Contents/Home",
             default = true,
           }
         }
