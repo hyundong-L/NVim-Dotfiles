@@ -35,44 +35,6 @@ require("lspsaga").setup({
 	border_style = "single",
 	rename_prompt_prefix = "➤",
 	server_filetype_map = {},
-	definition_preview_icon = "  ",
-	finder_action_keys = {
-		open = "o",
-		vsplit = "s",
-		split = "i",
-		quit = "q",
-		scroll_down = "<C-f>",
-		scroll_up = "<C-b>",
-	},
-	code_action_keys = {
-		quit = "q",
-		exec = "<CR>",
-	},
-	rename_action_keys = {
-		quit = "<C-c>",
-		exec = "<CR>",
-	},
-	definition_preview_icon = "  ",
-	border_style = "single",
-	rename_prompt_prefix = "➤",
-	server_filetype_map = {},
-	definition_preview_icon = "  ",
-	finder_action_keys = {
-		open = "o",
-		vsplit = "s",
-		split = "i",
-		quit = "q",
-		scroll_down = "<C-f>",
-		scroll_up = "<C-b>",
-	},
-	code_action_keys = {
-		quit = "q",
-		exec = "<CR>",
-	},
-	rename_action_keys = {
-		quit = "<C-c>",
-		exec = "<CR>",
-	},
-	definition_preview_icon = "  ",
+	
 	vim.keymap.set('n', 'K', '<cmd>Lspsaga hover_doc<CR>')
 })
