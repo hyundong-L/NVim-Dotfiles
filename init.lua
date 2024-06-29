@@ -9,7 +9,6 @@ vim.o.shiftwidth = 4
 vim.clipboard=unnamedplus
 
 vim.cmd[[colorscheme palenightfall]]
-
 require('palenightfall').setup({
   transparent = true,
 })
