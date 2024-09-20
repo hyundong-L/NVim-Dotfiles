@@ -1,0 +1,9 @@
+require("config.lazy")
+
+require("config.globals")
+require("config.keymaps")
+require("config.options")
+
+vim.o.clipboard = "unnamedplus"
+
+vim.cmd([[highlight Search guibg=#82AAFF guifg=#000000]])
