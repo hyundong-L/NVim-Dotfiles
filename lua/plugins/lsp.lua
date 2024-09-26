@@ -11,7 +11,7 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "lua_ls", "ts_ls", "html", "jdtls", "java-debug-adapter", "java-test" }, -- Java 관련 도구 추가
+				ensure_installed = { "lua_ls", "ts_ls", "html", "jdtls" }, -- Java 관련 도구 추가
 			})
 		end,
 	},
@@ -54,16 +54,6 @@ return {
 			local bundles = {}
 
 			-- Java 디버그 및 테스트 설정
-			if mason_registry.is_installed("java-debug-adapter") then
-				local java_dbg_path = mason_registry.get_package("java-debug-adapter"):get_install_path()
-				table.insert(bundles, java_dbg_path .. "/extension/server/com.microsoft.java.debug.plugin-*.jar")
-			end
-
-			if mason_registry.is_installed("java-test") then
-				local java_test_path = mason_registry.get_package("java-test"):get_install_path()
-				table.insert(bundles, java_test_path .. "/extension/server/*.jar")
-			end
-
 			require("jdtls").start_or_attach({
 				cmd = { "jdtls", "-javaagent:" .. lombok_jar },
 				root_dir = require("lspconfig").util.root_pattern(".git", "pom.xml", "build.gradle"),
