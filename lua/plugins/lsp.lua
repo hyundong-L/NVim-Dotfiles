@@ -11,7 +11,7 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "lua_ls", "ts_ls", "html", "jdtls" }, -- Java 관련 도구 추가
+				ensure_installed = { "lua_ls", "ts_ls", "html", "jdtls", "dockerls" }, -- Java 관련 도구 추가
 			})
 		end,
 	},
@@ -35,6 +35,22 @@ return {
 						implementationsCodeLens = { enabled = true },
 						referencesCodeLens = { enabled = true },
 						inlayHints = { parameterNames = { enabled = "all" } },
+					},
+				},
+			})
+
+			-- Docker 설정
+			lspconfig.dockerls.setup({
+				cmd = { "docker-langserver", "--stdio" }, -- 도커 LSP 실행 경로
+				filetypes = { "dockerfile" },
+				root_dir = lspconfig.util.root_pattern("Dockerfile"),
+				settings = {
+					docker = {
+						languageserver = {
+							diagnostics = {
+								enabled = true,
+							},
+						},
 					},
 				},
 			})
